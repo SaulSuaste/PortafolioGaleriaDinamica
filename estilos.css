@@ -1,0 +1,101 @@
+*{
+    margin:  0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f2f2f2;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+a{
+    /* quitar el subrayado por defecto de enlaces */
+    text-decoration: none; 
+}
+.contenedor{
+    width: 90%; /*ocupara el 90% del contenedor*/
+    max-width: 900px; /*su tamaño maximo*/
+    margin: auto; /*centrar contenedor*/
+    /*quitar borde despues, solo es para ver dimencion del contenedor*/
+    border: 2px solid #000000;
+}
+
+
+/******************************************************************
+                            HEADER 
+******************************************************************/
+header{
+    /*Separa todo de la parte de arriba*/
+    padding: 40px 0;
+}
+
+.encabezado{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.encabezado p{ /*da formato al parrafo del encabezado*/
+    color: #999999;
+}
+
+form{
+    width: 100%; /*Tiene todo el tamaño del contenedor*/
+    display: flex; /*Todo dentro del formulario sea flexible*/
+    justify-content: center; /*centrar contenido*/
+    margin-bottom: 20px;
+}
+.barra-busqueda{
+    width: 70%; /*ocupara el 70% del contenedor*/
+    height: 45px;
+    line-height: 1.6; /*altura de cada renglon*/
+    background-color: #FFF;
+    padding: 0 20px; /*Solo separacion a los lados y no tener el texto pegado*/
+    border-radius: 100px; /*hace redondeado el cuadro*/
+    border: none; /*quita el borde*/
+    text-align: center;
+    font-size: 16px;
+}
+
+.categoria{
+    display: flex; /*hacer el contenido flexible*/
+    justify-content: center;   /*centrar contenido*/
+    flex-wrap: wrap; /*irlo desplazando para abjajo si se reduce el espacio*/
+}
+
+.categoria a{
+    color: #9b9b9b;
+    margin: 10px 20px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.categoria a.activo{
+    color: #000;
+}
+
+
+/******************************************************************
+                            GRID
+******************************************************************/
+
+.grid{ /*Es la clase del contenedor de la seccion para grid*/
+    position: relative; /*el contenido conserva su espacio en DOM aunque se mueva*/
+    width: 100%;
+
+
+}
+
+.grid .item{ /*es el contenedor para los elementos*/
+    /*El contenido no conserva su espacio en DOM, por lo tanto, se sobreponen los otros*/
+    position: absolute; 
+    display: block; /*se acomodan en bloques*/
+    padding: 0;
+    margin: 10px; /* margen en los 4 lados */
+    /* El ancho del contenedor sera calculado para tres, se resta el margin */
+    width: calc(33.33333% - 20px);
+}   
+
+
+
+.grid .item img{
+    width: 100%; /*Para que ocupe el 100% de su contenedor*/
+}
