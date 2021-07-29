@@ -55,20 +55,20 @@ form{
     font-size: 16px;
 }
 
-.categoria{
+.categorias{
     display: flex; /*hacer el contenido flexible*/
     justify-content: center;   /*centrar contenido*/
     flex-wrap: wrap; /*irlo desplazando para abjajo si se reduce el espacio*/
 }
 
-.categoria a{
+.categorias a{
     color: #9b9b9b;
     margin: 10px 20px;
     font-size: 15px;
     font-weight: 700;
 }
 
-.categoria a.activo{
+.categorias a.activo{
     color: #000;
 }
 
@@ -80,8 +80,13 @@ form{
 .grid{ /*Es la clase del contenedor de la seccion para grid*/
     position: relative; /*el contenido conserva su espacio en DOM aunque se mueva*/
     width: 100%;
+    opacity: 0; /*para que todo tenga opacidaad 0 y no se vea*/
+    transition: opacity 0.9s linear 0.5s;
 
+}
 
+.imagenes-cargadas{ /*esto se aplicara con JS para que aparezcan las img*/
+    opacity: 1;
 }
 
 .grid .item{ /*es el contenedor para los elementos*/
@@ -94,8 +99,12 @@ form{
     width: calc(33.33333% - 20px);
 }   
 
-
+.grid .item-contenido{
+    position: relative; /*conserva espacio en DOM*/
+}
 
 .grid .item img{
     width: 100%; /*Para que ocupe el 100% de su contenedor*/
+    cursor: pointer; /*cambia el estilo del cursor al estar sobre las img*/
+    vertical-align: top;
 }
