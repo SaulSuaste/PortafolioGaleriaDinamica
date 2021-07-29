@@ -107,4 +107,5 @@ form{
     width: 100%; /*Para que ocupe el 100% de su contenedor*/
     cursor: pointer; /*cambia el estilo del cursor al estar sobre las img*/
     vertical-align: top;
+    border-radius: 20px;
 }
