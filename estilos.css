@@ -5,7 +5,7 @@
 }
 body{
     background-color: #f2f2f2;
-    font-family: 'Gowun Dodum', sans-serif;
+    /* font-family: 'Gowun Dodum', sans-serif; */
 }
 a{
     /* quitar el subrayado por defecto de enlaces */
@@ -16,7 +16,7 @@ a{
     max-width: 900px; /*su tamaño maximo*/
     margin: auto; /*centrar contenedor*/
     /*quitar borde despues, solo es para ver dimencion del contenedor*/
-    border: 2px solid #000000;
+    /* border: 2px solid #000000; */
 }
 
 
@@ -53,6 +53,7 @@ form{
     border: none; /*quita el borde*/
     text-align: center;
     font-size: 16px;
+    outline: none;/*quitar borde al seleccionar elemento*/
 }
 
 .categorias{
@@ -137,6 +138,7 @@ form{
 
 .overLay img{
     max-width: 100%; /*ocupe el maximo tamaño la imagen*/
+    border-radius: 15px;
 }
 
 .overLay .descripcion{ /*dentro de la clase overlay afecta la clase descripcion*/
@@ -166,3 +168,49 @@ form{
     right: -25px; /*ajustar boton en esquina superior derecha*/
     top: -25px;
 }
+
+
+/******************************************************************
+                            Footer 
+******************************************************************/
+
+footer .redes-sociales{ /* alinear el contenido */
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+footer .redes-sociales a img{
+    display: block; /*para que sean bloques y se pueda modificar tamaños*/
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    margin: 20px;
+    transition: .3s ease all;
+}
+
+.contenedor-icono:hover{ /*se drea la animacion*/
+    animation: icono 1s ease; /*velocidad de animacion*/
+}
+
+@keyframes icono{ /*empieza en su posicion normal y gira en el eje z 360 grados*/
+    from{
+        transform: rotate3d(0,0,0, 0);
+    }
+    to{
+        transform: rotate3d(0,0,1, 360deg);
+    }
+}
+
+.diseñador{
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(250, 63, 63);
+}
+
+.diseñador a{color: rgb(0, 0, 0);}/*color de los enlaces*/
+.diseñador a:hover{text-decoration: underline;}/*al poner cursor colocar linea*/
