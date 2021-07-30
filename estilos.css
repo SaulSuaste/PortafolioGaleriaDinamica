@@ -214,3 +214,30 @@ footer .redes-sociales a img{
 
 .diseñador a{color: rgb(0, 0, 0);}/*color de los enlaces*/
 .diseñador a:hover{text-decoration: underline;}/*al poner cursor colocar linea*/
+
+
+/******************************************************************
+                            Mediaqueries 
+******************************************************************/
+/* Ajustar para dispositivos mobiles */
+@media screen and (max-width:700px) {
+    .grid .item{
+        width: calc(50% - 20px);
+    }
+
+    .barra-busqueda{
+        width: 100%;
+    }
+
+    .overLay .contenedor-img{
+        max-width: 90%; /*ocupe el maximo tamaño la imagen*/
+        
+        align-content: center;
+        align-items: center;
+    }
+
+    .overLay #boton-cerrar{/*boton*/
+        right: -15px; /*ajustar boton en esquina superior derecha*/
+        top: -30px;
+    }
+}
