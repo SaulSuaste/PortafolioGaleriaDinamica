@@ -25,12 +25,17 @@ a{
 ******************************************************************/
 header{
     /*Separa todo de la parte de arriba*/
-    padding: 40px 0;
+    padding: 10px 0;
 }
 
 .encabezado{
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.contenedor-marcus img{
+    width: 35%;
+    height: 35%;
 }
 
 .encabezado p{ /*da formato al parrafo del encabezado*/
