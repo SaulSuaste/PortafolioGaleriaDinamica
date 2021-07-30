@@ -107,5 +107,62 @@ form{
     width: 100%; /*Para que ocupe el 100% de su contenedor*/
     cursor: pointer; /*cambia el estilo del cursor al estar sobre las img*/
     vertical-align: top;
-    border-radius: 20px;
+    border-radius: 15px;
+}
+
+/******************************************************************
+                            Over Lay
+******************************************************************/
+
+.overLay{
+    position: fixed; /*deja la caja fija en la pantalla aunque se desplace*/
+    top: 0px; /*ajustar a la pantalla*/
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: #000d; /*fondo negro un poco transparente */
+    width: 100%; /*ocupara toda la pantalla*/
+    height: 100vh; /*ocupa todo el alto del dispositivo*/
+    /*display flex sirve para poder mover los elementos dentro del contenedor*/
+    display: none; /*no mostrara el contenedor hasta que se habilite*/
+    align-items: center; /*centrar la alineacion de los elementos verticalmente*/
+    justify-content: center;/*ajusta horizontalmente al centro*/
+    flex-direction: column; /*para que los elementos se acomoden en columna*/
+    padding-top: 25px;
+}
+
+.activo{
+    display: flex; 
+}
+
+.overLay img{
+    max-width: 100%; /*ocupe el maximo tamaño la imagen*/
+}
+
+.overLay .descripcion{ /*dentro de la clase overlay afecta la clase descripcion*/
+    display: block;
+    background: #fff;
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    padding: 20px;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 10px;
+    max-width: 50%; /*50% de la pantalla*/
+}
+
+.contenedor-img{
+    position: relative;
+}
+
+.overLay #boton-cerrar{/*boton*/
+    background: #fff;
+    border-radius: 8px;
+    /* color: #fff; */
+    max-width: 25px;
+    min-width: 25px;
+    cursor: pointer; /*manita*/
+    position: absolute; /*no conserva espacio en DOM, por lo tanto se puede sobreponer*/
+    right: -25px; /*ajustar boton en esquina superior derecha*/
+    top: -25px;
 }

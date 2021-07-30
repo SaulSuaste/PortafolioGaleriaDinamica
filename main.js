@@ -42,7 +42,7 @@ window.addEventListener('load', ()=>{
     });
   });
   
-  // ******************* Barra de Busqueda ****************************
+  // ************************* Barra de Busqueda ****************************
   //Se obtiene el elemento con id "barra-busqueda", se agrega evento para que al ingresar un texto
   //ejecute la funcion
   document.getElementById("barra-busqueda").addEventListener('input', evento => {
@@ -51,6 +51,36 @@ window.addEventListener('load', ()=>{
     //Al modulo filter se le pasa una funcion flecha que obtiene la etiqueta personalizada "data-etiquetas"
     //que contenga lo que el usuario este ingresando en el cuadro de texto
     grid.filter(img => img.getElement().dataset.etiquetas.includes(busqueda));
+  });
+
+  // *************************** Over Lay ****************************
+  const overLay = document.getElementById("overLay"); //obtener elemento con Id overlay
+  //obtener todos los elementos img dentro de las clases item-contenido, item y grid, y por cada uno ejecutar la funcion
+  document.querySelectorAll(".grid .item .item-contenido img").forEach(img => {
+    //agregar a cada elemento un evento al hacer click
+    img.addEventListener("click", () => {
+      const ruta = img.getAttribute("src"); //se obtiene el atributo src de cada img
+      //Se busca en la imagen seleccionada la etiqueta personalizada descripcion con dataset
+      //Se tiene que navegar a los contenedores de arriba para obtenerla 
+      const descripcion = img.parentNode.parentNode.dataset.descripcion;
+
+      overLay.classList.add("activo"); //Se agrega la clase al elemento clickeado
+      document.querySelector("#overLay .imgOverLay").src = ruta;//se agrega src a la imagen, de la imagen clickeada
+      document.querySelector("#overLay .descripcion").innerHTML = descripcion; //se agrega la descripcion de la imagen clickeada a la img overLay
+    })
+  })
+
+  // *************************** boton de cerrar ****************************
+  //Cerrar imagen al dar click al boton. Se creo un evento al recibir un click en el boton
+  document.querySelector("#boton-cerrar").addEventListener("click", ()=>{
+    overLay.classList.remove("activo")
+  })
+
+  //cerrar al dar click solo en el elemento con id overLay
+  //Al elemento de clase overLay se agrega evento escucha para realizar una funcion
+  overLay.addEventListener("click", evento => {
+    //si el evento que se selecciona tiene un ID overLay, se elimina la clase activo para quitar el Over Lay. de lo contrario hacer nada.
+    evento.target.id === "overLay" ? overLay.classList.remove("activo") : "";
   })
 
 });
